@@ -7,7 +7,7 @@ EdemyX adalah aplikasi kursus online berbasis Laravel yang mendukung fitur multi
 *Kelompok 2*
 
 Anggota : 
-1. Muhammad Azani Irvand (2308107010002)
+1. Muhammad Azani Irvand (2308107010026)
 2. Halim Elsa Putra (2308107010062)
 3. Shafa Disya Aulia (2308107010002)
 4. Nadia Maghdalena (2308107010045)
