@@ -4,6 +4,14 @@ EdemyX adalah aplikasi kursus online berbasis Laravel yang mendukung fitur multi
 
 ---
 
+*Kelompok 2*
+
+Anggota : 
+1. Muhammad Azani Irvand (2308107010002)
+2. Halim Elsa Putra (2308107010062)
+3. Shafa Disya Aulia (2308107010002)
+4. Nadia Maghdalena (2308107010045)
+
 ## Fitur Utama
 
 ### 1. **Autentikasi & Login**
@@ -97,22 +105,22 @@ EdemyX adalah aplikasi kursus online berbasis Laravel yang mendukung fitur multi
 ## Hasil & Tampilan
 
 - **Login:**  
-  ![Login Screenshot](public/screenshots/login.png)
+  ![Login Screenshot](public/screenhasil/LoginPage.png)
 
 - **Dashboard Admin:**  
-  ![Admin Dashboard](public/screenshots/admin-dashboard.png)
+  ![Admin Dashboard](public/screenhasil/DashboardAdmin.png)
 
 - **Manage Users:**  
-  ![Manage Users](public/screenshots/manage-users.png)
+  ![Manage Users](public/screenhasil/ManageUsersPage.png)
 
 - **Edit User:**  
-  ![Edit User](public/screenshots/edit-user.png)
+  ![Edit User](public/screenhasil/EditUserPage.png)
 
 - **Manage Courses:**  
-  ![Manage Courses](public/screenshots/manage-courses.png)
+  ![Manage Courses](public/screenhasil/ManageCoursePage.png)
 
 - **Edit Profile:**  
-  ![Edit Profile](public/screenshots/edit-profile.png)
+  ![Edit Profile](public/screenhasil/ProfilePage.png)
 
 ---
 
@@ -124,4 +132,27 @@ EdemyX adalah aplikasi kursus online berbasis Laravel yang mendukung fitur multi
 - **Seeder**: Data admin/user/kursus awal otomatis diisi saat migrate:seed.
 
 ---
+
+## Struktur Folder Utama
+
+- `app/Http/Controllers/` — Controller aplikasi (Admin & User)
+- `resources/views/` — Blade template (halaman user & admin)
+- `routes/web.php` — Definisi route utama
+- `public/` — Asset publik (CSS, JS, gambar, screenshot)
+- `database/seeders/` — Seeder data awal
+
+---
+
+## Catatan Penting
+
+- File `.env` **tidak diupload** ke repo, silakan copy dari `.env.example` dan atur sesuai database lokal Anda.
+- Folder `vendor/` dan `node_modules/` juga tidak diupload (otomatis diabaikan oleh `.gitignore`).
+- Untuk akses admin, gunakan akun yang sudah di-seed di database atau buat manual via seeder.
+
+---
+
+## Lisensi
+
+Project ini dibuat untuk keperluan pembelajaran dan tugas kuliah. Tidak untuk dikomersialkan.
+
 
