@@ -1,0 +1,287 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*/
+:root{
+    --accent-color: #2A2C65;
+    --base-color: white;
+    --text-color: #2E2B41;
+    --input-color: #F3F0FF;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Tambahkan ini untuk konsistensi box model */
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+    color:var(--text-color);
+    text-align: center;
+}
+body{
+    min-height: 100vh;
+    background-color: white;
+    background-size: cover;
+    /* Hapus overflow: hidden; jika menyebabkan masalah scroll */
+    /* overflow: hidden; */
+}
+.wrapper{
+    margin: auto;
+    box-sizing: border-box;
+    background-color: var( --base-color);
+    /* Gunakan min-height agar bisa scroll jika konten melebihi */
+    min-height: 100vh;
+    width: max(40%,600px);
+    padding: 10px;
+    border-radius: 0 20px 20px  0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 20px; /* Kurangi sedikit margin bottom jika perlu */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Jarak antar elemen form */
+}
+
+/* ----- PERBAIKAN ALIGNMENT ICON & INPUT ----- */
+form > div.input-group { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+form label.input-icon { /* Beri class khusus untuk ikon */
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 5px; /* Tambahkan padding jika ikon terlalu besar */
+}
+form label.input-icon svg { /* Atur ukuran SVG jika perlu */
+    width: 24px;
+    height: 24px;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+    /* box-sizing:border-box; sudah ada di * */
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font:inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+/* Terapkan hover ke semua tipe input */
+form input[type="email"]:hover,
+form input[type="password"]:hover,
+form input[type="text"]:hover { /* <<< TAMBAHKAN INI */
+    border-color: var(--accent-color);
+}
+
+/* Terapkan focus ke semua tipe input */
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="text"]:focus { /* <<< TAMBAHKAN INI */
+    outline: none;
+    border-color: var(--text-color);
+}
+
+/* Efek fokus pada ikon (pastikan berlaku untuk semua input group) */
+div.input-group:has(input:focus) > label.input-icon { /* Selector ini mungkin perlu disesuaikan jika :has tidak didukung luas */
+    background-color: var(--text-color);
+}
+
+form input::placeholder {
+    color: var(--text-color);
+    opacity: 0.7; /* Buat sedikit lebih pudar */
+}
+
+/* ----- CSS BARU UNTUK REMEMBER ME ----- */
+.remember-me-container { /* Beri class pada div pembungkus Remember Me di Blade */
+    width: 100%; /* Atau sesuaikan dengan lebar form */
+    margin-top: 1rem;
+    text-align: left; /* Ratakan ke kiri */
+    padding-left: 10px; /* Beri sedikit padding jika perlu */
+}
+
+.remember-me-container label {
+    display: inline-flex; /* Gunakan inline-flex agar checkbox dan teks sejajar */
+    align-items: center; /* Sejajarkan item secara vertikal */
+    cursor: pointer;
+    font-size: 0.9em; /* Sesuaikan ukuran font */
+    color: var(--text-color); /* Sesuaikan warna teks */
+}
+
+.remember-me-container input[type="checkbox"] {
+    /* Reset tampilan default browser jika perlu */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Styling checkbox kustom */
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--accent-color); /* Warna border */
+    border-radius: 3px;
+    margin-right: 0.5rem; /* Jarak checkbox dengan teks */
+    cursor: pointer;
+    position: relative; /* Untuk posisi checkmark */
+    vertical-align: middle; /* Bantu alignment */
+}
+
+.remember-me-container input[type="checkbox"]:checked {
+    background-color: var(--accent-color); /* Warna background saat dicek */
+    border-color: var(--accent-color);
+}
+
+/* Styling checkmark (opsional) */
+.remember-me-container input[type="checkbox"]:checked::after {
+    content: '✔'; /* Karakter cek */
+    color: var(--base-color); /* Warna cek */
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.remember-me-container span {
+    /* Styling teks "Remember me" jika perlu */
+}
+/* ----- AKHIR CSS REMEMBER ME ----- */
+
+
+/* ----- CSS BARU UNTUK AREA TOMBOL & FORGOT PASSWORD ----- */
+.form-actions { /* Beri class pada div pembungkus tombol & forgot di Blade */
+    width: 100%; /* Atau sesuaikan */
+    display: flex;
+    justify-content: space-between; /* Posisikan elemen berjauhan */
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0 10px; /* Beri padding jika perlu */
+}
+
+.form-actions a { /* Styling link forgot password */
+    font-size: 0.9em;
+    color: #007bff; /* Warna link standar */
+    text-decoration: none;
+}
+.form-actions a:hover {
+     color: var(--accent-color);
+     text-decoration: underline;
+}
+
+
+.form-actions button { /* Styling tombol di dalam .form-actions */
+    margin-top: 0;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em; /* Sesuaikan padding jika perlu */
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+}
+/* ----- AKHIR CSS AREA TOMBOL & FORGOT PASSWORD ----- */
+
+
+form button:hover{
+    background-color: var(--text-color);
+}
+form button:focus{
+    outline: none;
+    background-color: var(--text-color);
+
+}
+
+a {
+    color: #007bff;
+    transition: color 0.3s ease; /* Efek transisi halus */
+    text-decoration: none; /* Hapus underline default jika mau */
+}
+
+a:hover {
+    color: var(--accent-color); /* Warna berubah saat hover */
+    text-decoration: underline; /* Tambahkan underline saat hover */
+}
+
+/* Hapus duplikasi a:hover */
+/*
+a:hover{
+    text-decoration: underline;
+}*/
+
+/* ----- CSS BARU UNTUK LINK BAWAH ----- */
+.auth-links { /* Beri class pada div/p pembungkus link Sign Up/Login Admin */
+    margin-top: 1.5rem;
+    font-size: 0.9em;
+    line-height: 1.6; /* Beri jarak antar baris */
+}
+.auth-links p {
+    margin-bottom: 0.5rem; /* Jarak antar paragraf link */
+}
+
+.auth-links a { /* Styling dasar link di sini */
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 5px;
+}
+.auth-links a:hover { /* Efek hover */
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+/* ----- AKHIR CSS LINK BAWAH ----- */
+
+
+@media(max-width: 1100px){
+    .wrapper{
+        width: min(600px,100%);
+        border-radius: 0;
+    }
+}
+form div.incorrect label{
+    background-color: #f06272;
+}
+form div.incorrect input{
+    border-color: #f06272;
+}
+#errors-message{
+    color: #f06272;
+}
+
+/* ----- CSS BARU UNTUK ERROR SERVER SIDE ----- */
+.server-error {
+    color: #f06272; /* Sesuaikan warna error */
+    font-size: 0.8em; /* Kecilkan sedikit */
+    text-align: left; /* Ratakan kiri */
+    width: 100%; /* Lebar penuh */
+    padding-left: 60px; /* Geser ke kanan sejajar input (50px ikon + 10px padding) */
+    margin-top: 3px; /* Jarak dari input */
+}*

@@ -1,0 +1,210 @@
+/* public/css/courses.css */
+
+/* Pengaturan Dasar Halaman */
+body.admin-form-page {
+    background-color: #f4f7fc; /* Latar belakang halaman */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 50px 20px; /* Jarak atas/bawah dan samping */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #495057;
+}
+
+/* Container Utama */
+.course-form-container,
+.course-detail-container {
+    background-color: #ffffff;
+    padding: 35px 45px;
+    margin: 0 auto; /* Otomatis di tengah */
+    width: 100%;
+    max-width: 800px; /* Batasi lebar maksimum */
+    border-radius: 8px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.09);
+    border: 1px solid #e9ecef;
+}
+
+/* Judul Halaman di Dalam Container */
+.course-form-container h1,
+.course-detail-container h1 {
+    text-align: center;
+    margin-top: 0; /* Hapus margin atas default */
+    margin-bottom: 35px;
+    color: #2A2C65;
+    font-size: 1.9rem;
+    font-weight: 600;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 20px;
+}
+
+/* Grup Form */
+.form-group {
+    margin-bottom: 22px; /* Jarak antar field */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+/* Input Fields (Text, Number, Textarea, Select) */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Efek Focus */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #86b7fe; /* Biru muda */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Shadow biru */
+}
+
+/* Input File */
+.form-group input[type="file"] {
+    padding: 8px;
+}
+.current-thumbnail {
+    margin-top: 10px;
+}
+.current-thumbnail span {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 5px;
+}
+.current-thumbnail img {
+    max-width: 180px; /* Sedikit lebih besar */
+    max-height: 120px;
+    display: block;
+    border: 1px solid #dee2e6;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+/* Tombol Aksi Form */
+.form-actions {
+    margin-top: 35px;
+    text-align: right;
+    padding-top: 25px;
+    border-top: 1px solid #e9ecef;
+}
+
+.form-actions button,
+.form-actions a.btn {
+    padding: 12px 30px; /* Tombol lebih besar */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 12px;
+    transition: all 0.2s ease; /* Transisi lebih halus */
+}
+.form-actions button:hover,
+.form-actions a.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-actions button[type="submit"] { background-color: #2A2C65; color: white; }
+.form-actions button[type="submit"]:hover { background-color: #1f214d; }
+.form-actions a.cancel-btn { background-color: #6c757d; color: white; }
+.form-actions a.cancel-btn:hover { background-color: #5a6268; }
+
+/* Styling Halaman Show (Detail) */
+.detail-item {
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.detail-item:last-of-type { /* Gunakan last-of-type untuk item terakhir */
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.detail-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #6c757d;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px; /* Sedikit jarak antar huruf */
+}
+.detail-item p, .detail-item span, .detail-item img {
+    color: #343a40;
+    line-height: 1.6;
+    font-size: 1.05rem; /* Ukuran font data sedikit lebih besar */
+}
+.detail-item img { /* Thumbnail di halaman show */
+    max-width: 300px; /* Lebih besar di halaman detail */
+    margin-top: 8px;
+    border: 1px solid #e9ecef;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Tombol di Halaman Show */
+.detail-actions {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #e9ecef;
+}
+.detail-actions a.btn,
+.detail-actions button { /* Menggunakan gaya tombol yang sama dengan form */
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem; /* Sedikit lebih kecil dari tombol utama */
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+}
+.detail-actions a.btn:hover,
+.detail-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.detail-actions a.btn-primary { background-color: #0d6efd; color: white; }
+.detail-actions a.btn-primary:hover { background-color: #0b5ed7; }
+.detail-actions button.btn-danger { background-color: #dc3545; color: white; }
+.detail-actions button.btn-danger:hover { background-color: #bb2d3b; }
+.detail-actions a.btn-secondary { background-color: #6c757d; color: white; }
+.detail-actions a.btn-secondary:hover { background-color: #5a6268; }
+.detail-actions form { display: inline-block; }
+
+/* Styling Error & Success (Sudah ada di contoh sebelumnya) */
+.error { color: #dc3545; font-size: 0.85em; margin-top: 5px; display: block; }
+.alert-danger { /* ... */ }
+.alert-success { /* ... */ }
